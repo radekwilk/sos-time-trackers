@@ -1,0 +1,117 @@
+
+<!-- This can be paste as a separate section in index.html -->
+
+<hr class="separate-section">
+
+
+
+      <!-- Burger King timers section -->
+      <section id="bkTotal" class="guide-info py-1 mt-1 mb-5 gray_bgr">
+        <div class="container mb-4">
+          <h1 class="text-center my-3">
+            Burger King - Front counter service time
+            <button class="info-icon" data-toggle="modal" data-target="#bk_service_info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </h1>
+    
+    
+          <p class="lead">
+            Waiting time starts when Guest receives receipt or cash/card back and ends when Guest receives their order. Target waiting time is 120 seconds (2 min).
+          </p>
+    
+          <!-- <hr class="style14"> -->
+    
+          <!-- service time control - start the new customer -->
+          <div class="container mt-4 ">
+            <div class="row">
+              <div class="col-10 mx-auto text-center">
+                  <button class="editBox stopwatch" id="start__BK"> New customer
+                    <img src="../img/bk_drink.gif" alt="" width="60" class="stopwatch-icon">
+                  </button>
+                  <button class="editBox stopwatch restart mt-2" onclick="location.reload();">
+                    <i class="fas fa-redo"></i>
+                    <p class="reload-text">Reload page</p>
+                  </button>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="row service__times">
+              <div class="col-10 mx-auto">
+                <div class="row justify-content-around">
+                  <div class="col-0 col-sm-0 mx-auto" hidden>
+                    <div class="timer__serviceTime clearfix" id="bk-timer__serviceTime">
+                      <div class="timer__serviceTime--text left">Avg Order to delivery time</div>
+                      <div class="timer__serviceTime--value right" id="bk-serviceTime">0:00</div>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-6 mx-auto">
+                    <div class="timer__totalTime clearfix" id="bk-timer__totalTime">
+                      <div class="timer__totalTime--text left">Avg service time at front counter</div>
+                      <div class="timer__totalTime--value right" id="bk-totalServiceTime">0:00</div>
+                    </div>
+                  </div>
+                  <div class="col-8 col-sm-6 mx-auto">
+                    <div class="timer__totalTime clearfix transactions" id="timer__totalCust">
+                      <div class="timer__totalTime--text left">Number of completed transactions: </div>
+                      <div class="timer__totalTime--value right" id="bk-totalCustomers">0</div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row py-2">
+            <!-- a table with measured times -->
+            <div class="col-12 mx-auto ">
+              <!-- description row -->
+              <div class="row py-2 info-container">
+                <div class="col-3 text-center align-content-center ">
+                  <p class="info-text">Customer description</p>
+                </div>
+                <!-- timers col -->
+                <div class="col-6">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-4 text-center">
+                      <p class="info-text">Time start</p>
+                    </div>
+                    <div class="col-4 text-center">
+                      <p class="info-text">Order received</p>
+                    </div>
+                    <div class="col-4 text-center">
+                      <p class="info-text">Service time</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of timers col -->
+                <div class="col-3 text-center time-edits">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-6 text-center">
+                      <p class="info-text">Order received</p>
+                    </div>
+                    <div class="col-6 text-center">
+                      <p class="info-text">Delete customer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of description row -->
+    
+              <div class="bk_List">
+               
+                <!-- HERE GOES NEW LINE OF SOS TIMER -->
+  
+  
+              </div>
+    
+            </div>
+            <!-- end of table with measured times -->
+    
+          </div>
+    
+        </div>
+        <!--end of container  -->
+      </section>
+      <!-- End of Burger King timers section -->

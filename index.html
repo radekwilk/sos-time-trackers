@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon/favicon.ico">
+    
+    <!-- PNG icons for different sizes -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../img/favicon/apple-touch-icon.png">
+    
+    <!-- Android Chrome icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./img/favicon/android-chrome-512x512.png">
+    
+    <!-- Web Manifest -->
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./css/main.css" />
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="./css/all.css" />
+  <title>Speed of service timers</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header id="home">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-5">
+      <a href="https://intranet.intertek.com/" class="navbar-brand">
+        <img src="./img/saiglobal-card.webp" alt="company logo" class="img-fluid" width="120" />
+      </a>
+      <button class="navbar-toggler" type="button" data-target="#myNavbar" data-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav mx-auto ">
+          <!-- <li class="nav-item mx-3">
+            <a href="../calculate.html#epcs" class="nav-link">ePCS</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a href="QPM_checker.html#qpm" class="nav-link">QPM</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a href="paper_pcs.html#pcs" class="nav-link">Paper PCS </a>
+          </li>
+          <li class="nav-item dropdown mx-3">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Instructions</a>
+            <div class="dropdown-menu">
+              <p class="text-center">Step-by-Step how to get:</p>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item" href="instructions.html#gsr">Gold Standard Report</a>
+              <a class="dropdown-item" href="instructions.html#fsr">Freshness Standard Report</a>
+              <a class="dropdown-item" href="instructions.html#pcr">Piece Count Report</a>
+              <a class="dropdown-item" href="instructions.html#dbsc">Daily Scorecard</a>
+            </div>
+          </li>
+          <li class="nav-item mx-3">
+            <a href="timers.html" class="nav-link">Speed of Services </a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- banner section -->
+    <section id="timers-banner" class="info-banner">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <div class="py-3 banner-center">
+              <h1 class="text-capitalize text-center mt-2 mt-lg-3">
+                Speed of Service trackers
+              </h1>
+              <ul class="pcs-systems pcs-systems-info list-group d-none d-md-block">
+                <!-- <h3>Check SOS for</h3> -->
+                <li class="pcs-systems-item">
+                    <li class="pcs-systems-item-inner">
+                      <a href="#kfcServiceTimesTotal" class="pcs-systems-item-inner-link">
+                         <img src="./img/kfc_bucket.gif" alt="stopwatch" width="60" class="img-fluid mt-3 mr-4"> Dine in hand off time
+                      </a>
+                    </li>
+                </li>
+                <li class="pcs-systems-item">
+                    <li class="pcs-systems-item-inner">
+                      <a href="#kfcDTTotal" class="pcs-systems-item-inner-link">
+                        <img src="./img/chicken_clock.gif" alt="" width="60"  class="img-fluid mt-3 mr-4"> DT hand off time
+                      </a>
+                    </li>
+                </li>
+                <li class="pcs-systems-item-inner">
+                  <a href="#kfcHDTotal" class="pcs-systems-item-inner-link">
+                      <img src="./img/kfc_multibucket.gif" alt="" width="60" class="img-fluid mt-3 mr-4"> Home delivery hand off time
+                  </a>
+                </li>
+                <!-- <li class="pcs-systems-item">
+                    <li class="pcs-systems-item-inner">
+                      <a href="#bkTotal" class="pcs-systems-item-inner-link">
+                          <img src="./img/bk_whopper.gif" alt="" width="60" class="img-fluid mt-3"> Burger King - service time
+                      </a>
+                    </li>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of banner section -->
+  </header>
+  <!-- end of header -->
+
+  <!-- KFC timers section -->
+  <section id="kfcServiceTimesTotal" class="guide-info py-1 mt-1 ">
+    <div class="container">
+      <h1 class="text-center my-3">
+        Dine in hand off time
+        <button class="info-icon mt-2" data-toggle="modal" data-target="#kfc_fc_service_info">
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </h1>
+
+      <p class="lead">
+        Observe 5 transactions or 5 minutes the Dine in. Deviate if the orders take more than 2 minutes to hand over to the customer after they paid (either at kiosk or at the front counter POS)
+      </p>
+
+      <!-- service time control - start the new customer -->
+          <div class="container mt-4 ">
+            <div class="row">
+              <div class="col-10 mx-auto text-center">
+                  <button class="editBox stopwatch" id="start"> New customer (paid transaction)
+                    <img src="./img/kfc_clock.gif" alt="" width="60" class="stopwatch-icon">
+                  </button>
+                  <button class="editBox stopwatch restart mt-2" onclick="location.reload();">
+                    <i class="fas fa-redo"></i>
+                    <p class="reload-text">Reload page</p>
+                  </button>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="row service__times">
+              <div class="col-10 mx-auto">
+                <div class="row justify-content-around">
+                  <div class="col-0 col-sm-0 mx-auto" hidden>
+                    <div class="timer__serviceTime clearfix" id="kfc-timer__serviceTime">
+                      <div class="timer__serviceTime--text left">Avg Order to delivery time</div>
+                      <div class="timer__serviceTime--value right" id="kfc-serviceTime">0:00</div>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-6 mx-auto">
+                    <div class="timer__totalTime clearfix" id="kfc-timer__totalTime">
+                      <div class="timer__totalTime--text left">Avg hand off time at front counter</div>
+                      <div class="timer__totalTime--value right" id="kfc-totalServiceTime">0:00</div>
+                    </div>
+                  </div>
+                  <div class="col-8 col-sm-6 mx-auto">
+                    <div class="timer__totalTime clearfix transactions" id="timer__totalCust">
+                      <div class="timer__totalTime--text left">Number of measured transactions: </div>
+                      <div class="timer__totalTime--value right" id="kfc-totalCustomers">0</div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+
+     <div class="row py-2">
+            <!-- a table with measured times -->
+            <div class="col-12 mx-auto ">
+              <!-- description row -->
+              <div class="row py-2 info-container">
+                <div class="col-3 text-center align-content-center ">
+                  <p class="info-text">Customer description</p>
+                </div>
+                <!-- timers col -->
+                <div class="col-6">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-4 text-center">
+                      <p class="info-text">Time start</p>
+                    </div>
+                    <div class="col-4 text-center">
+                      <p class="info-text">Order received</p>
+                    </div>
+                    <div class="col-4 text-center">
+                      <p class="info-text">Service time</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of timers col -->
+                <div class="col-3 text-center time-edits">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-6 text-center">
+                      <p class="info-text">Order received</p>
+                    </div>
+                    <div class="col-6 text-center">
+                      <p class="info-text">Delete customer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of description row -->
+
+          <div class="kfc__timesList">
+            
+<!-- HERE IS GOING NEW LINE OF SOS for FRONT COUNTER -->
+
+          </div>
+
+        </div>
+        <!-- end of table with measured times -->
+
+      </div>
+
+    </div>
+    <!--end of container  -->
+  </section>
+  <!-- End of KFC timers section -->
+
+  <hr class="separate-section">
+
+  <!-- KFC Drive Thru timers section -->
+  <section id="kfcDTTotal" class="guide-info py-1 mt-1 gray_bgr">
+    <div class="container">
+      <h1 class="text-center my-3">
+        Drive Thru hand off time
+        <button class="info-icon mt-2" data-toggle="modal" data-target="#kfc_DT_service_info">
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </h1>
+
+      <p class="lead">
+        Time starts when customer paid for their order and then stops when when customer receives ordered food. The target is 1 minute. 
+      </p>
+
+      <!-- service time control - start the new customer -->
+          <div class="container mt-4 ">
+            <div class="row">
+              <div class="col-10 mx-auto text-center">
+                  <button class="editBox stopwatch" id="start__DT"> New car
+                    <img src="./img/car.gif" alt="" width="60" class="stopwatch-icon">
+                  </button>
+                  <button class="editBox stopwatch restart" onclick="location.reload();">
+                    <i class="fas fa-redo"></i>
+                    <p class="reload-text">Reload page</p>
+                  </button>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="row service__times">
+              <div class="col-10 mx-auto">
+                <div class="row justify-content-around">
+                  <div class="col-0 col-sm-0 mx-auto" hidden>
+                    <div class="timer__serviceTime clearfix" id="kfc_DT-timer__serviceTime">
+                      <div class="timer__serviceTime--text left">Avg Order to delivery time</div>
+                      <div class="timer__serviceTime--value right" id="kfc_DT-serviceTime">0:00</div>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-6 mx-auto">
+                    <div class="timer__totalTime clearfix" id="kfc_DT-timer__totalTime">
+                      <div class="timer__totalTime--text left">Avg Drive Thru hand off time</div>
+                      <div class="timer__totalTime--value right" id="kfc_DT-totalServiceTime">0:00</div>
+                    </div>
+                  </div>
+                  <div class="col-8 col-sm-6 mx-auto">
+                    <div class="timer__totalTime clearfix transactions" id="timer__totalCars">
+                      <div class="timer__totalTime--text left">Number of completed transactions: </div>
+                      <div class="timer__totalTime--value right" id="kfc_DT-totalCustomers">0</div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+
+     <div class="row py-2">
+            <!-- a table with measured times -->
+            <div class="col-12 mx-auto ">
+              <!-- description row -->
+              <div class="row py-2 info-container">
+                <div class="col-3 text-center align-content-center ">
+                  <p class="info-text">Car description</p>
+                </div>
+                <!-- timers col -->
+                <div class="col-6">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-4 text-center">
+                      <p class="info-text">Car at pick up window</p>
+                    </div>
+                    <div class="col-4 text-center">
+                      <p class="info-text">Order received</p>
+                    </div>
+                    <div class="col-4 text-center">
+                      <p class="info-text">Hand off time</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of timers col -->
+                <div class="col-3 text-center time-edits">
+                  <div class="d-flex justify-content-between">
+                    <div class="col-6 text-center">
+                      <p class="info-text">Order received</p>
+                    </div>
+                    <div class="col-6 text-center">
+                      <p class="info-text">Delete car</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of description row -->
+
+          <div class="kfc__DT_List">
+            
+<!-- HERE IS GOING NEW LINE OF SOS TIMES -->
+
+          </div>
+
+        </div>
+        <!-- end of table with measured times -->
+
+      </div>
+
+    </div>
+    <!--end of container  -->
+  </section>
+  <!-- End of KFC DT timers section -->
+
+
+  <hr class="separate-section">
+
+
+
+    <!-- KFC Home delivery timers section -->
+    <section id="kfcHDTotal" class="guide-info py-1 mt-1 ">
+      <div class="container">
+        <h1 class="text-center my-3">
+          Home Delivery hand off time
+          <button class="info-icon mt-2" data-toggle="modal" data-target="#kfc_HD_service_info">
+            <i class="fas fa-info-circle"></i>
+          </button>
+        </h1>
+  
+  
+        <p class="lead">
+          Time starts when home delivery driver arrives to the store and time stops when driver receives the order. The target time is 5 minutes.
+        </p>
+  
+        <!-- <hr class="style14"> -->
+  
+        <!-- service time control - start the new qutomer -->
+        <div class="container mt-4 ">
+          <div class="row">
+            <div class="col-10 mx-auto text-center">
+                <button class="editBox stopwatch" id="start__HD"> New driver
+                  <img src="./img/just_eat.gif" alt="" width="60" class="stopwatch-icon">
+                </button>
+                <button class="editBox stopwatch restart" onclick="location.reload();">
+                  <i class="fas fa-redo"></i>
+                  <p class="reload-text">Reload page</p>
+                </button>
+              <!-- </div> -->
+            </div>
+          </div>
+          <div class="row service__times">
+            <div class="col-10 mx-auto">
+              <div class="row justify-content-around">
+                <div class="col-0 col-sm-0 mx-auto" hidden>
+                  <div class="timer__serviceTime clearfix" id="kfc_HD-timer__serviceTime">
+                    <div class="timer__serviceTime--text left">Avg Order to delivery time</div>
+                    <div class="timer__serviceTime--value right" id="kfc_HD-serviceTime">0:00</div>
+                  </div>
+                </div>
+                <div class="col-10 col-sm-6 mx-auto">
+                  <div class="timer__totalTime clearfix" id="kfc_HD-timer__totalTime">
+                    <div class="timer__totalTime--text left">Avg home delivery hand off time</div>
+                    <div class="timer__totalTime--value right" id="kfc_HD-totalServiceTime">0:00</div>
+                  </div>
+                </div>
+                <div class="col-8 col-sm-6 mx-auto">
+                  <div class="timer__totalTime clearfix transactions" id="timer__totalCust">
+                    <div class="timer__totalTime--text left">Number of completed transactions: </div>
+                    <div class="timer__totalTime--value right" id="kfc_HD-totalCustomers">0</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row py-2">
+          <!-- a table with measured times -->
+          <div class="col-12 mx-auto ">
+            <!-- description row -->
+            <div class="row py-2 info-container">
+              <div class="col-3 text-center align-content-center ">
+                <p class="info-text">Driver description</p>
+              </div>
+              <!-- timers col -->
+              <div class="col-6">
+                <div class="d-flex justify-content-between">
+                  <div class="col-4 text-center">
+                    <p class="info-text">Driver arrives</p>
+                  </div>
+                  <div class="col-4 text-center">
+                    <p class="info-text">Order received</p>
+                  </div>
+                  <div class="col-4 text-center">
+                    <p class="info-text">Hand off time</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end of timers col -->
+              <div class="col-3 text-center time-edits">
+                <div class="d-flex justify-content-between">
+                  <div class="col-6 text-center">
+                    <p class="info-text">Order received</p>
+                  </div>
+                  <div class="col-6 text-center">
+                    <p class="info-text">Delete driver</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end of description row -->
+  
+            <div class="kfc__HD_List">
+             
+              <!-- HERE GOES NEW LINE OF SOS TIMER -->
+
+
+            </div>
+  
+          </div>
+          <!-- end of table with measured times -->
+  
+        </div>
+  
+      </div>
+      <!--end of container  -->
+    </section>
+    <!-- End of KFC Home delivery timers section -->
+
+    
+
+<!-- *********** MODALS ************************************** -->
+
+      <!-- modal KFC FC service time info -->
+  <div class="modal fade" id="kfc_fc_service_info" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center modal-header-timers">
+          <img src="./img/colonels_logo.png" alt="kfc logo" class="img-fluid" width="60" />
+          <h5 class="modal-title ml-4 pt-2"> How to measure KFC front counter speed of service</h5>
+          <button type="button" class="close close-info" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-10 mx-auto">
+                <ol class="mt-3 ml-0">
+                  <li class="list-item">Click <em><b> New customer </b></em> button when customer paid for their order. It could be either kiosk or front counter POS.</li>
+                  <li class="list-item">Then click on chicken meal icon
+                    <img src="./img/fried-chicken-meal.png" class="food-img px-1"/>  when customer receives their order.
+                  </li>
+                  <li class="list-item">Once you click on the chicken meal icon, it will calculate <em><b>Hand off </b></em> time for that transaction and update the <em><b>average hand off time </b></em> based on number measured transactions.
+                     Results will be displayed in fields on the top of the form. 
+                  </li>
+                  <li class="list-item">Measured average hand off times are color coded: <br /> <span class="green-colour">Green = ON TARGET</span>, <span class="red-colour">RED = ABOVE TARGET</span> (TARGET = 2 min).
+                 </li>
+                  <li class="list-item">Click on trash icon  
+                    <img src="./img/bin.png" class="food-img px-1"/> if you want to delete an of the customer (i.e. when you lost track of that customer)
+                  </li>
+                  <li class="list-item">If icon is active, you can overwrite payment of food received time.
+                  </li>
+                  <li class="list-item">Click on reload page button 
+                    <i class="fas fa-redo-alt px-1"></i> 
+                    if you want to reload the page (clear all the data on the page). Warning - all the measured times will be lost!!!
+                  </li>
+                </ol>
+                <!-- <p class="muted">*OTD - Order to Delivery </p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of modal KFC FC service time info -->
+
+
+  <!-- modal KFC DT service time info -->
+  <div class="modal fade" id="kfc_DT_service_info" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center modal-header-timers">
+          <img src="./img/colonels_logo.png" alt="kfc logo" class="img-fluid" width="60" />
+          <h5 class="modal-title ml-4 pt-3">How to measure Drive Thru hand off time</h5>
+          <button type="button" class="close close-info" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-10 mx-auto">
+                <ol class="mt-3 ml-0">
+                  <li class="list-item">Click <em><b> New car </b></em> button when customer paid for their order.</li>
+                  <!-- <li class="list-item">Click on car at the DT window icon 
+                    <img src="./img/drive-thru.png" class="food-img px-1"/>  when car arrives at pick up window. This will make chicken bucket icon clickable.
+                  </li> -->
+                  <li class="list-item">Click on chicken bucket icon
+                    <img src="./img/fried-chicken.png" class="food-img px-1"/>  when car leaves with food order.
+                  </li>
+                  <li class="list-item">Once you click chicken bucket icon, it will calculate transaction <em><b>b>hand off </b></em> time. Average hand off time will be updated based on the number of measured transactions. Results will be displayed in fields on the top of the form. 
+                  </li>
+                  <li class="list-item">Individual hand off times and average hand off time are color coded: <br /> <span class="green-colour">Green = ON TARGET</span>, <span class="red-colour">RED = ABOVE TARGET</span> (TARGET = 1 min).
+                 </li>
+                  <li class="list-item">Click on trash icon  
+                    <img src="./img/bin.png" class="food-img px-1"/> if you want to delete that car/transaction.
+                  </li>
+                  <li class="list-item">If icon is active, you can overwrite corresponding time.
+                  </li>
+                  <li class="list-item">Click on reload page button 
+                    <i class="fas fa-redo-alt px-1"></i> 
+                    if you want to reload the page (clear all the data on the page).  Warning - all the measured times will be lost!!!
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of modal KFC DT service time info -->
+
+
+  <!-- modal KFC Home delivery service time info -->
+  <div class="modal fade" id="kfc_HD_service_info" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center modal-header-timers">
+          <img src="./img/colonels_logo.png" alt="kfc logo" class="img-fluid" width="60" />
+          <h5 class="modal-title ml-4 pt-2">How to measure Home Delivery hand off</h5>
+          <button type="button" class="close close-info" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-10 mx-auto">
+                <ol class="mt-3 ml-0">
+                  <li class="list-item">Click <em><b> New driver </b></em> button when home delivery driver arrives to the store.</li>
+                  <li class="list-item">Click on delivery bicycle icon 
+                    <img src="./img/bicycle.png" class="food-img px-1"/>
+                    when home delivery driver picks up the order.
+                  </li>
+                  <li class="list-item">Once you click on delivery bicycle icon, it will calculate home delivery hand off time for that order and then recalculate the average hand off time based on number measured transactions. Results will be displayed in the field on the top of the form. 
+                  </li>
+                  <li class="list-item">Total hand off times and avg hand off are color coded: <br /> <span class="green-colour">Green = ON TARGET</span>, <span class="red-colour">RED = ABOVE TARGET</span> (TARGET = 5 min).
+                 </li>
+                  <li class="list-item">Click on trash icon  
+                    <img src="./img/bin.png" class="food-img px-1"/> if you want to delete that driver/transaction.
+                  </li>
+                  <li class="list-item">If icon is active, you can overwrite corresponding time.
+                  </li>
+                  <li class="list-item">Click on reload page button 
+                    <i class="fas fa-redo-alt px-1"></i> 
+                    if you want to reload the page (clear all the data on the page). Warning - all the measured times will be lost!!!
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of modal KFC Home delivery service time info -->
+
+
+   <!-- modal Burger King service time info -->
+   <div class="modal fade" id="bk_service_info" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center modal-header-timers">
+          <img src="img/bk_whopper.gif" alt="kfc logo" class="img-fluid" width="60" />
+          <h5 class="modal-title ml-4 pt-4">How to measure Burger King front counter service time</h5>
+          <button type="button" class="close close-info" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-10 mx-auto">
+                <ol class="mt-3 ml-0">
+                  <li class="list-item">Click <em><b> New customer </b></em> button when Guest receives receipt or cash/card back.</li>
+                  <li class="list-item">Click on hamburger meal icon 
+                    <img src="img/fast-food-burger.png" class="food-img mx-1"/>  when customer recives his/her order.
+                  </li>
+                  <li class="list-item">Once you click hamburger icon, it will calculate front counter service time and it will display it in the field. Average service time will be calculated base on completed transations.
+                     Results will be displayed in the field on the top of the form. 
+                  </li>
+                  <li class="list-item">Total service time and avg servie time are color coded: <br /> Green = ON TARGET, ORANGE = PART POINTS AWARDED, RED = ABOVE TARGET (TARGET = 2 min, GOES RED ABOVE 2 min 15 seconds).
+                 </li>
+                  <li class="list-item">Click on trash icon  
+                    <img src="img/bin.png" class="food-img mx-1"/> if you want to delete that customer/transaction.
+                  </li>
+                  <li class="list-item">If icon is active, you can overwrite corresponding time.
+                  </li>
+                  <li class="list-item">Click on reload page button 
+                    <i class="fas fa-redo-alt"></i> 
+                    if you want to reload the page (clear all the data on the page).
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of modal Burger King service time info -->
+
+<!-- bootbox element -->
+  <p><a class="show-alert" href=#></a></p>
+
+<!-- end bootbox element -->
+
+<!-- Footer -->
+<footer class="footer bg-dark">
+
+  <!-- Copyright -->
+  <div class="text-light text-center py-3">© 2025 Copyright:
+    <p class="small"> <a class="link-primary" href="mailto:radek.wilk@intertek.com">Radek Wilk</a></p>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+  <!-- jquery -->
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- script js -->
+  <!-- masking libraries -->
+  <script src="./js/inputmask.js"></script>
+  <script src="./js/inputmask_binding.js"></script>
+  <!-- end of masking libraries -->
+  <!-- moment.js -->
+  <script src="./js/moment.js"></script>
+  <!-- clockdown.js -->
+  <script src="./js/clockdown.js"></script>
+  <!-- <script src="../js/app.js"></script> -->
+  <script src="./js/timers_app.js"></script>
+  <!-- nice alert boxes library -->
+  <script src="./js/bootbox.js"></script>
+</body>
+
+</html>
