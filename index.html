@@ -82,7 +82,7 @@
           <div class="col-10 mx-auto">
             <div class="py-3 banner-center">
               <h1 class="text-capitalize text-center mt-2 mt-lg-3">
-                Speed of Service trackers
+                Hand off times trackers
               </h1>
               <ul class="pcs-systems pcs-systems-info list-group d-none d-md-block">
                 <!-- <h3>Check SOS for</h3> -->
@@ -125,7 +125,7 @@
   <!-- KFC timers section -->
   <section id="kfcServiceTimesTotal" class="guide-info py-1 mt-1 ">
     <div class="container">
-      <h1 class="text-center my-3">
+      <h1 class="text-center my-3 custom-font-size">
         Dine in hand off time
         <button class="info-icon mt-2" data-toggle="modal" data-target="#kfc_fc_service_info">
           <i class="fas fa-info-circle"></i>
@@ -139,11 +139,10 @@
       <!-- service time control - start the new customer -->
           <div class="container mt-4 ">
             <div class="row">
-              <div class="col-10 mx-auto text-center">
-                  <button class="editBox stopwatch" id="start"> New customer (paid transaction)
-                    <img src="./img/kfc_clock.gif" alt="" width="60" class="stopwatch-icon">
+              <div class="col-12 col-md-10 mx-auto text-center d-flex justify-content-center">
+                  <button class="editBox stopwatch mr-2" id="start"> New customer<img src="./img/kfc_clock.gif" alt="" width="60" class="stopwatch-icon">
                   </button>
-                  <button class="editBox stopwatch restart mt-2" onclick="location.reload();">
+                  <button class="editBox stopwatch restart mt-0" onclick="location.reload();">
                     <i class="fas fa-redo"></i>
                     <p class="reload-text">Reload page</p>
                   </button>
@@ -151,7 +150,7 @@
               </div>
             </div>
             <div class="row service__times">
-              <div class="col-10 mx-auto">
+              <div class="col-12 col-md-10 mx-auto">
                 <div class="row justify-content-around">
                   <div class="col-0 col-sm-0 mx-auto" hidden>
                     <div class="timer__serviceTime clearfix" id="kfc-timer__serviceTime">
@@ -159,15 +158,15 @@
                       <div class="timer__serviceTime--value right" id="kfc-serviceTime">0:00</div>
                     </div>
                   </div>
-                  <div class="col-10 col-sm-6 mx-auto">
+                  <div class="col-6 mx-auto">
                     <div class="timer__totalTime clearfix" id="kfc-timer__totalTime">
-                      <div class="timer__totalTime--text left">Avg hand off time at front counter</div>
+                      <div class="timer__totalTime--text left">Avg hand off - Dine in</div>
                       <div class="timer__totalTime--value right" id="kfc-totalServiceTime">0:00</div>
                     </div>
                   </div>
-                  <div class="col-8 col-sm-6 mx-auto">
+                  <div class="col-6 mx-auto">
                     <div class="timer__totalTime clearfix transactions" id="timer__totalCust">
-                      <div class="timer__totalTime--text left">Number of measured transactions: </div>
+                      <div class="timer__totalTime--text left">Num of trans: </div>
                       <div class="timer__totalTime--value right" id="kfc-totalCustomers">0</div>
                     </div>
                   </div>
@@ -188,14 +187,14 @@
                 <!-- timers col -->
                 <div class="col-6">
                   <div class="d-flex justify-content-between">
-                    <div class="col-4 text-center">
+                    <div class="col-6 col-md-4 d-none d-md-block text-center">
                       <p class="info-text">Time start</p>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-6 col-md-4 d-none d-md-block text-center">
                       <p class="info-text">Order received</p>
                     </div>
-                    <div class="col-4 text-center">
-                      <p class="info-text">Service time</p>
+                    <div class="col-6 col-md-4 text-center ml-auto">
+                      <p class="info-text">Hand off time</p>
                     </div>
                   </div>
                 </div>
@@ -234,7 +233,7 @@
   <!-- KFC Drive Thru timers section -->
   <section id="kfcDTTotal" class="guide-info py-1 mt-1 gray_bgr">
     <div class="container">
-      <h1 class="text-center my-3">
+      <h1 class="text-center my-3 custom-font-size">
         Drive Thru hand off time
         <button class="info-icon mt-2" data-toggle="modal" data-target="#kfc_DT_service_info">
           <i class="fas fa-info-circle"></i>
@@ -248,8 +247,8 @@
       <!-- service time control - start the new customer -->
           <div class="container mt-4 ">
             <div class="row">
-              <div class="col-10 mx-auto text-center">
-                  <button class="editBox stopwatch" id="start__DT"> New car
+              <div class="col-12 col-md-10 mx-auto text-center d-flex justify-content-center">
+                  <button class="editBox stopwatch mr-2" id="start__DT"> New car
                     <img src="./img/car.gif" alt="" width="60" class="stopwatch-icon">
                   </button>
                   <button class="editBox stopwatch restart" onclick="location.reload();">
@@ -260,7 +259,7 @@
               </div>
             </div>
             <div class="row service__times">
-              <div class="col-10 mx-auto">
+              <div class="col-12 col-md-10 mx-auto">
                 <div class="row justify-content-around">
                   <div class="col-0 col-sm-0 mx-auto" hidden>
                     <div class="timer__serviceTime clearfix" id="kfc_DT-timer__serviceTime">
@@ -268,15 +267,15 @@
                       <div class="timer__serviceTime--value right" id="kfc_DT-serviceTime">0:00</div>
                     </div>
                   </div>
-                  <div class="col-10 col-sm-6 mx-auto">
+                  <div class="col-6 mx-auto mx-auto">
                     <div class="timer__totalTime clearfix" id="kfc_DT-timer__totalTime">
-                      <div class="timer__totalTime--text left">Avg Drive Thru hand off time</div>
+                      <div class="timer__totalTime--text left">Avg hand off - DT</div>
                       <div class="timer__totalTime--value right" id="kfc_DT-totalServiceTime">0:00</div>
                     </div>
                   </div>
-                  <div class="col-8 col-sm-6 mx-auto">
+                  <div class="col-6 mx-auto mx-auto">
                     <div class="timer__totalTime clearfix transactions" id="timer__totalCars">
-                      <div class="timer__totalTime--text left">Number of completed transactions: </div>
+                      <div class="timer__totalTime--text left">Num of trans: </div>
                       <div class="timer__totalTime--value right" id="kfc_DT-totalCustomers">0</div>
                     </div>
                   </div>
@@ -297,13 +296,13 @@
                 <!-- timers col -->
                 <div class="col-6">
                   <div class="d-flex justify-content-between">
-                    <div class="col-4 text-center">
+                    <div class="col-6 col-md-4 d-none d-md-block text-center">
                       <p class="info-text">Car at pick up window</p>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-6 col-md-4 d-none d-md-block text-center">
                       <p class="info-text">Order received</p>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-6 col-md-4 text-center ml-auto">
                       <p class="info-text">Hand off time</p>
                     </div>
                   </div>
@@ -346,7 +345,7 @@
     <!-- KFC Home delivery timers section -->
     <section id="kfcHDTotal" class="guide-info py-1 mt-1 ">
       <div class="container">
-        <h1 class="text-center my-3">
+        <h1 class="text-center my-3 custom-font-size">
           Home Delivery hand off time
           <button class="info-icon mt-2" data-toggle="modal" data-target="#kfc_HD_service_info">
             <i class="fas fa-info-circle"></i>
@@ -363,8 +362,8 @@
         <!-- service time control - start the new qutomer -->
         <div class="container mt-4 ">
           <div class="row">
-            <div class="col-10 mx-auto text-center">
-                <button class="editBox stopwatch" id="start__HD"> New driver
+            <div class="col-12 col-md-10 mx-auto text-center d-flex justify-content-center">
+                <button class="editBox stopwatch mr-2" id="start__HD"> New driver
                   <img src="./img/just_eat.gif" alt="" width="60" class="stopwatch-icon">
                 </button>
                 <button class="editBox stopwatch restart" onclick="location.reload();">
@@ -375,7 +374,7 @@
             </div>
           </div>
           <div class="row service__times">
-            <div class="col-10 mx-auto">
+            <div class="col-12 col-md-10 mx-auto">
               <div class="row justify-content-around">
                 <div class="col-0 col-sm-0 mx-auto" hidden>
                   <div class="timer__serviceTime clearfix" id="kfc_HD-timer__serviceTime">
@@ -383,15 +382,15 @@
                     <div class="timer__serviceTime--value right" id="kfc_HD-serviceTime">0:00</div>
                   </div>
                 </div>
-                <div class="col-10 col-sm-6 mx-auto">
+                <div class="col-6 mx-auto mx-auto">
                   <div class="timer__totalTime clearfix" id="kfc_HD-timer__totalTime">
-                    <div class="timer__totalTime--text left">Avg home delivery hand off time</div>
+                    <div class="timer__totalTime--text left">Avg hand off - HD</div>
                     <div class="timer__totalTime--value right" id="kfc_HD-totalServiceTime">0:00</div>
                   </div>
                 </div>
-                <div class="col-8 col-sm-6 mx-auto">
+                <div class="col-6 mx-auto mx-auto">
                   <div class="timer__totalTime clearfix transactions" id="timer__totalCust">
-                    <div class="timer__totalTime--text left">Number of completed transactions: </div>
+                    <div class="timer__totalTime--text left">Num of trans: </div>
                     <div class="timer__totalTime--value right" id="kfc_HD-totalCustomers">0</div>
                   </div>
                 </div>
@@ -412,13 +411,13 @@
               <!-- timers col -->
               <div class="col-6">
                 <div class="d-flex justify-content-between">
-                  <div class="col-4 text-center">
+                  <div class="col-6 col-md-4 d-none d-md-block text-center">
                     <p class="info-text">Driver arrives</p>
                   </div>
-                  <div class="col-4 text-center">
+                  <div class="col-6 col-md-4 d-none d-md-block text-center">
                     <p class="info-text">Order received</p>
                   </div>
-                  <div class="col-4 text-center">
+                  <div class="col-6 col-md-4 text-center ml-auto">
                     <p class="info-text">Hand off time</p>
                   </div>
                 </div>

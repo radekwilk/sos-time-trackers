@@ -483,3 +483,52 @@ color: white;
 
 
 /* end of ph input  */
+
+/* RESPONSIVE DESIGN */
+
+/* Max screen size of 600px */
+@media only screen and (max-width: 600px) {
+
+  .navbar-brand {
+    width: 60px;
+  }
+
+  .info-banner {
+    min-height: 20vh;
+    max-height: 40vh;
+  }
+
+  .custom-font-size {
+    font-size: 30px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .stopwatch {
+    font-size: 16px;
+  }
+
+  .stopwatch-icon {
+    margin-left: 1rem;
+    width: 40px;
+   }
+
+  .restart {
+    font-size: 16px;
+  }
+
+  .restart i {
+    font-size: 16px;
+  }
+
+  .timer__totalTime {
+    font-size: 14px;
+  }
+
+  .totalTIme-small {
+    width: 80px;
+  }
+
+}
