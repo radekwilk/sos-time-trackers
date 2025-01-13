@@ -115,3 +115,26 @@
         <!--end of container  -->
       </section>
       <!-- End of Burger King timers section -->
+
+
+
+      <div class="row py-1 info-container times-container" id="kfc-%id%">
+        <div class="col-3 text-center align-content-center "><input type="text" class="form-control timer" placeholder="Customer description" id="kfc-description%id%"></div>
+        <div class="col-6">
+            <div class="d-flex justify-content-between">
+                <div class="col-6 col-md-4 d-none d-md-block text-center"><p class="form-control timer active" id="kfc-start__time%id%">%timeStart%</p></div>
+                <div class="col-0 text-center"><p class="form-control timer" id="kfc-paid__time%id%" hidden>Order time</p></div>
+                <div class="col-6 col-md-4 d-none d-md-block text-center"><p class="form-control timer" id="kfc-stop__time%id%">Time stop</p></div>
+                <div class="col-0 text-center"><p class="form-control timer" id="kfc-otd__time%id%" hidden>Window time</p></div>
+                <div class="col-4 text-center mr-4 mr-md-0"><p class="form-control timer totalTIme-small" id="kfc-total__time%id%">Service time</p></div>
+            </div>
+        </div>
+        <div class="col-3 text-center">
+            <div class="d-flex justify-content-around">
+                <div class="editBox" id="kfc-paid-%id%" hidden><i class="far fa-money-bill-alt"></i></div>
+                <div class="editBox" id="kfc-stop-%id%"><img src="./img/fried-chicken-meal.png" class="food-img"/></div>
+                <div class="editBox" id="kfc-trash-%id%"><img src="./img/bin.png" class="food-img"/></div>
+            </div>
+        </div>
+    </div>
+</div>
