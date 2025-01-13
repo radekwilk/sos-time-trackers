@@ -531,4 +531,12 @@ color: white;
     width: 80px;
   }
 
+  .modal {
+    max-width: 100% !important;
+  }
+
+  .modal-dialog {
+    min-width: 100vw !important;
+  }
+
 }
