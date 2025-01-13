@@ -50,17 +50,18 @@ body {
 
 .info-banner {
   color: #fff;
-  min-height: calc(100vh - 86px);
+  min-height: calc(50vh - 86px);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(../img/info.jpg);
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/info.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .banner-center {
-  height: calc(100vh - 86px);
+  /* height: calc(100vh - 86px); */
+  height: calc(50vh - 86px);
 }
 
 #timers-banner {
@@ -70,6 +71,15 @@ body {
     url(../img/clock_bk.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center top;
+  position: relative;
+}
+
+.custom-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .pcs-systems {
@@ -101,13 +111,15 @@ body {
   color: #fff;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  -webkit-transform: scale(.9);
+  transform: scale(.9);
 }
 
 .pcs-systems-item-inner-link:hover {
   text-decoration: none;
   color: #a2a3a5;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .coming-soon {
@@ -537,6 +549,16 @@ color: white;
 
   .modal-dialog {
     min-width: 100vw !important;
+  }
+
+  .custom-heading {
+    font-size: 28px;
+    width: 100%;
+  }
+
+  .custom-heading img {
+    width: 60px;
+    margin-bottom: 15px;
   }
 
 }
